@@ -22,10 +22,10 @@ const requestToOpenAi = async (message) => {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: message,
-      max_tokens: 7,
+      max_tokens: 500,
       temperature: 0,
     });
-    return Promise.resolve(response);
+    return Promise.resolve(response.data);
   } catch (error) {
     return Promise.reject(error);
   }
